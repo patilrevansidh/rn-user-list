@@ -20,7 +20,7 @@ export default {
     Axios.interceptors.response.use(
       response => {
         const {data = {}} = response;
-        return response;
+        return data;
       },
       error => {
         return Promise.reject(error ? error.response : null);

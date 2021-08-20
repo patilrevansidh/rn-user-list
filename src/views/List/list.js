@@ -1,77 +1,59 @@
-import React, {useEffect} from 'react';
-import {
-  Text,
-  View,
-  FlatList,
-  TouchableOpacity,
-  StyleSheet,
-  Image,
-} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
-import data from './dummy.json';
-import {dateFormatter} from '../../config/utils/helper';
-import {rightArrow} from '../../common/assets/index';
-import {ROUTES, FORMAT, COLORS} from '../../common/contants/index';
-
-const ListItem = ({item, onDetail}) => {
-  const {name, picture, email, location, registered, dob} = item;
-  const fullName = `${name.first} ${name.last}`;
-  const joinedString = dateFormatter(registered.date);
-  const dobjoinedString = dateFormatter(dob.date, FORMAT);
-  return (
-    <View key={email} style={style.itemContainer}>
-      <TouchableOpacity
-        onPress={() =>
-          onDetail({...item, fullName, joinedString, dobjoinedString})
-        }>
-        <View style={[style.row]}>
-          <View style={[style.flex1]}>
-            <Image source={{uri: picture.thumbnail}} style={style.thumbnail} />
-          </View>
-          <View style={[style.flex3, style.seperateLeft]}>
-            <View>
-              <Text>{fullName}</Text>
-              <Text>{email}</Text>
-              <View style={style.row}>
-                <Text>Country | </Text>
-                <Text>{location.country}</Text>
-              </View>
-            </View>
-          </View>
-          <View style={[style.flex1]}>
-            <View style={style.row}>
-              <Text style={style.textRight}>{joinedString}</Text>
-              <View>
-                <Image source={rightArrow} style={style.arrowIcon} />
-              </View>
-            </View>
-          </View>
-        </View>
-      </TouchableOpacity>
-    </View>
-  );
-};
+import React, {useEffect, useState} from 'react';
+import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
+import {Error, Loader} from '../../common/components';
+import {COLORS, ROUTES} from '../../common/contants/index';
+import {fetchUsers} from '../../config/redux/actions/userAction';
+import ListItem from './Item';
 
 const Home = props => {
+  const [page, setPage] = useState(1);
+  const {
+    error,
+    loader,
+    userList = [],
+  } = useSelector(state => {
+    const {user} = state;
+    return {
+      error: user.error || '',
+      loader: user.loader || false,
+      userList: user.userList || [],
+    };
+  });
+
+  const dispatch = useDispatch();
+  const fetchUserData = () => {
+    dispatch(fetchUsers({page, results: 10}));
+  };
+
+  useEffect(() => {
+    fetchUserData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
+
   const {navigation} = props;
-  // useEffect(() => {
-  //   navigation.setParams({
-  //     headerStyle: {
-  //       textAlign: 'center',
-  //       backgroundColor: '#3333',
-  //     },
-  //   });
-  // }, []);
+  const isLoaded = !loader || !error;
+  if (loader && userList.length == 0) {
+    return <Loader />;
+  }
+  if (error) {
+    return <Error error={error} />;
+  }
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <View>
+    <View style={style.container}>
+      {isLoaded && userList.length > 0 && (
         <FlatList
           ItemSeparatorComponent={({highlighted}) => (
             <View style={style.separator} />
           )}
-          data={data.results}
+          ListEmptyComponent={() => (
+            <Text tyle={style.text}>No Records found</Text>
+          )}
+          data={userList}
+          keyExtractor={(item, index) => `${item.email}${index}`}
           renderItem={({item, index, separators}) => (
             <ListItem
+              key={item.email}
               onDetail={itemDetails =>
                 navigation.navigate(ROUTES.DETAILS, {itemDetails})
               }
@@ -79,50 +61,43 @@ const Home = props => {
               separators={separators}
             />
           )}
+          refreshing={loader}
+          onEndReached={no => setPage(page + 1)}
         />
-      </View>
-    </SafeAreaView>
+      )}
+      {loader && userList.length > 0 && (
+        <Text style={style.loading}>Loading Recrods..</Text>
+      )}
+    </View>
   );
 };
 
 const style = StyleSheet.create({
+  container: {
+    backgroundColor: COLORS.WHITE,
+    flex: 1,
+    paddingHorizontal: 8,
+  },
   separator: {
     height: 1,
     backgroundColor: COLORS.GRAY,
     marginHorizontal: 8,
   },
-  itemContainer: {
-    padding: 16,
-    backgroundColor: COLORS.WHITE,
-  },
-  arrowIcon: {
-    height: 13,
-    width: 13,
-    marginTop: 5,
-  },
   row: {
     display: 'flex',
     flexDirection: 'row',
   },
-  flex1: {
-    flex: 1,
+  text: {
+    textAlign: 'center',
+    color: COLORS.BLACK,
   },
-  flex3: {
-    flex: 2,
+  error: {
+    textAlign: 'center',
+    color: COLORS.RED,
   },
-  verticallyAlign: {
-    alignItems: 'center',
-  },
-  seperateLeft: {
-    marginLeft: 5,
-  },
-  textRight: {
-    textAlign: 'right',
-  },
-  thumbnail: {
-    width: 75,
-    height: 75,
+  loading: {
+    textAlign: 'center',
   },
 });
 
-export default Home;
+export default Home; //connect(mapStateToProps, null)(Home);

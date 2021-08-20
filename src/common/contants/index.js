@@ -9,4 +9,5 @@ export const COLORS = {
   GRAY: 'gray',
   WHITE: 'white',
   BLACK: 'black',
+  RED: 'red',
 };
