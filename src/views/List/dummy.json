@@ -1,0 +1,192 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {"title": "Mr", "first": "Tristan", "last": "Moulin"},
+      "location": {
+        "street": {"number": 5076, "name": "Avenue de l'Abbé-Roussel"},
+        "city": "Lille",
+        "state": "Guadeloupe",
+        "country": "France",
+        "postcode": 52410,
+        "coordinates": {"latitude": "2.6760", "longitude": "-45.9530"},
+        "timezone": {
+          "offset": "+10:00",
+          "description": "Eastern Australia, Guam, Vladivostok"
+        }
+      },
+      "email": "tristan.moulin@example.com",
+      "login": {
+        "uuid": "fbf80657-3995-431c-a03c-ce27331e20d0",
+        "username": "brownrabbit820",
+        "password": "353535",
+        "salt": "mKKxleVy",
+        "md5": "095cd869db8db0a61ede7708c1317ba6",
+        "sha1": "049c504282293e27a52c3784589f3d6bc940b33b",
+        "sha256": "a1bcc380d7255bea6370821abb839982ef08e9eefa02d835386c137059940f27"
+      },
+      "dob": {"date": "1992-05-14T05:34:03.918Z", "age": 29},
+      "registered": {"date": "2005-06-10T12:54:58.450Z", "age": 16},
+      "phone": "02-20-91-08-04",
+      "cell": "06-10-10-25-10",
+      "id": {"name": "INSEE", "value": "1NNaN90175779 80"},
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/46.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/46.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/46.jpg"
+      },
+      "nat": "FR"
+    },
+    {
+      "gender": "male",
+      "name": {"title": "Mr", "first": "Dan", "last": "Jordan"},
+      "location": {
+        "street": {"number": 8295, "name": "Chester Road"},
+        "city": "Armagh",
+        "state": "East Sussex",
+        "country": "United Kingdom",
+        "postcode": "LL72 9FW",
+        "coordinates": {"latitude": "-15.7739", "longitude": "-108.4018"},
+        "timezone": {
+          "offset": "0:00",
+          "description": "Western Europe Time, London, Lisbon, Casablanca"
+        }
+      },
+      "email": "dan.jordan@example.com",
+      "login": {
+        "uuid": "0204921f-12b8-4cce-9195-377d105839d4",
+        "username": "blackbird971",
+        "password": "melissa1",
+        "salt": "pJ2roZFJ",
+        "md5": "04ae4356ad3312a640a5d09cf075e994",
+        "sha1": "a786c29471303df38076c2d8f0b7cc11880e4c31",
+        "sha256": "757623051498571a7875f8a6d4c827c0e07661c6c1f8822d2c0e8ae6a8b4e72f"
+      },
+      "dob": {"date": "1958-03-05T04:23:46.360Z", "age": 63},
+      "registered": {"date": "2013-02-17T03:13:12.703Z", "age": 8},
+      "phone": "017684 47806",
+      "cell": "0723-023-498",
+      "id": {"name": "NINO", "value": "LE 14 69 75 N"},
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/33.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/33.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/33.jpg"
+      },
+      "nat": "GB"
+    },
+    {
+      "gender": "female",
+      "name": {"title": "Ms", "first": "Sara", "last": "Møller"},
+      "location": {
+        "street": {"number": 6838, "name": "Gyvelvej"},
+        "city": "Støvring ",
+        "state": "Sjælland",
+        "country": "Denmark",
+        "postcode": 60794,
+        "coordinates": {"latitude": "-47.9831", "longitude": "121.3558"},
+        "timezone": {
+          "offset": "-4:00",
+          "description": "Atlantic Time (Canada), Caracas, La Paz"
+        }
+      },
+      "email": "sara.moller@example.com",
+      "login": {
+        "uuid": "89921f39-5ce6-446d-b15d-425f0ad741fa",
+        "username": "greenpanda141",
+        "password": "rocket",
+        "salt": "tlv8qZXW",
+        "md5": "19744167c94a8a907878f5464fe01706",
+        "sha1": "efdc131692d1c94ebb5ee2d40c6ae905a26a3516",
+        "sha256": "6a786b7540b7c8e287f181175763ccbbecb4df7192d8fec8ef78f3d8c5aafe4e"
+      },
+      "dob": {"date": "1968-01-13T01:59:21.858Z", "age": 53},
+      "registered": {"date": "2003-02-21T05:55:37.039Z", "age": 18},
+      "phone": "81008594",
+      "cell": "53733165",
+      "id": {"name": "CPR", "value": "130168-2335"},
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/68.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/68.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/68.jpg"
+      },
+      "nat": "DK"
+    },
+    {
+      "gender": "female",
+      "name": {"title": "Mrs", "first": "Leonieke", "last": "Heiwegen"},
+      "location": {
+        "street": {"number": 9389, "name": "Groesdijk"},
+        "city": "Baarlo Ov",
+        "state": "Zuid-Holland",
+        "country": "Netherlands",
+        "postcode": 63812,
+        "coordinates": {"latitude": "42.4974", "longitude": "-40.1281"},
+        "timezone": {
+          "offset": "+4:00",
+          "description": "Abu Dhabi, Muscat, Baku, Tbilisi"
+        }
+      },
+      "email": "leonieke.heiwegen@example.com",
+      "login": {
+        "uuid": "5dd5b864-efe1-4404-9b5e-21c3bc39965e",
+        "username": "organicdog970",
+        "password": "destiny",
+        "salt": "eLLs5Ds0",
+        "md5": "497b6aa4f4b3c18e9082ea1dbe5884c0",
+        "sha1": "f9af7cc5c90850e6672ec969752180bf4b07cb67",
+        "sha256": "f415f3450459833ff315090b3152c929876d383934542fed2409056ff7f967c7"
+      },
+      "dob": {"date": "1979-04-17T07:52:57.123Z", "age": 42},
+      "registered": {"date": "2011-10-22T17:32:39.874Z", "age": 10},
+      "phone": "(253)-976-0507",
+      "cell": "(308)-136-9823",
+      "id": {"name": "BSN", "value": "72317028"},
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/87.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/87.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/87.jpg"
+      },
+      "nat": "NL"
+    },
+    {
+      "gender": "female",
+      "name": {"title": "Mrs", "first": "مهرسا", "last": "صدر"},
+      "location": {
+        "street": {"number": 1560, "name": "میدان دکتر فاطمی / جهاد"},
+        "city": "ارومیه",
+        "state": "خراسان جنوبی",
+        "country": "Iran",
+        "postcode": 44107,
+        "coordinates": {"latitude": "-64.3039", "longitude": "-17.1510"},
+        "timezone": {"offset": "+4:30", "description": "Kabul"}
+      },
+      "email": "mhrs.sdr@example.com",
+      "login": {
+        "uuid": "f36b1ba1-d9fb-4878-8c7c-025443bb67bd",
+        "username": "heavybutterfly546",
+        "password": "believe",
+        "salt": "s2AowOEv",
+        "md5": "1730d130166d83135523a16a5457163c",
+        "sha1": "f471d7971f806d19f21eda9796590e04cb1632dd",
+        "sha256": "55dcaad138366f484bc60573b78ce4175635bedb1c120c0894450bc2d2edf301"
+      },
+      "dob": {"date": "1981-03-18T14:27:02.268Z", "age": 40},
+      "registered": {"date": "2017-04-20T15:53:52.742Z", "age": 4},
+      "phone": "079-53503160",
+      "cell": "0908-982-6136",
+      "id": {"name": "", "value": null},
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/43.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/43.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/43.jpg"
+      },
+      "nat": "IR"
+    }
+  ],
+  "info": {
+    "seed": "8054713a9d1c00db",
+    "results": 5,
+    "page": 1,
+    "version": "1.3"
+  }
+}
